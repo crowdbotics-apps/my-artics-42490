@@ -1,22 +1,22 @@
-import React from 'react';
-import { SafeAreaView, View, Text, Image, FlatList } from 'react-native';
+import React from "react";
+import { SafeAreaView, View, Text, Image, FlatList } from "react-native";
 
 const Screen = () => {
   const dummyData = [{
-    id: '1',
-    image: 'https://tinyurl.com/42evm3m3',
-    title: 'Place 1',
-    description: 'Short description of Place 1'
+    id: "1",
+    image: "https://tinyurl.com/42evm3m3",
+    title: "Place 1",
+    description: "Short description of Place 1"
   }, {
-    id: '2',
-    image: 'https://tinyurl.com/42evm3m3',
-    title: 'Place 2',
-    description: 'Short description of Place 2'
+    id: "2",
+    image: "https://tinyurl.com/42evm3m3",
+    title: "Place 2",
+    description: "Short description of Place 2"
   }, {
-    id: '3',
-    image: 'https://tinyurl.com/42evm3m3',
-    title: 'Place 3',
-    description: 'Short description of Place 3'
+    id: "3",
+    image: "https://tinyurl.com/42evm3m3",
+    title: "Place 3",
+    description: "Short description of Place 3"
   }];
 
   const renderPlaceItem = ({
@@ -39,13 +39,13 @@ const Screen = () => {
       {
       /* Google map view displaying the stops of the next route */
     }
-      <View style={styles.mapContainer}>
-        {
+      <View style={styles.mapContainer}>{
         /* Google map view component */
-      }
-      </View>
+      }</View>
 
-      <Text style={styles.subHeading}>List Places in the route you might stop</Text>
+      <Text style={styles.subHeading}>
+        List Places in the route you might stop
+      </Text>
 
       {
       /* List of places user might stop */
@@ -68,11 +68,13 @@ const Screen = () => {
     }
       <View style={styles.newsContainer}>
         <Image source={{
-        uri: 'https://tinyurl.com/42evm3m3'
+        uri: "https://tinyurl.com/42evm3m3"
       }} style={styles.newsImage} />
         <View style={styles.newsTextContainer}>
           <Text style={styles.newsTitle}>News Title</Text>
-          <Text style={styles.newsDescription}>Short description of the news</Text>
+          <Text style={styles.newsDescription}>
+            Short description of the news
+          </Text>
         </View>
       </View>
 
@@ -80,6 +82,20 @@ const Screen = () => {
 
       {
       /* List of categories */
+    }
+      <FlatList data={dummyData} renderItem={renderPlaceItem} keyExtractor={item => item.id} horizontal showsHorizontalScrollIndicator={false} />
+
+      <Text style={styles.heading}>News Stories</Text>
+
+      {
+      /* List of news stories */
+    }
+      <FlatList data={dummyData} renderItem={renderPlaceItem} keyExtractor={item => item.id} horizontal showsHorizontalScrollIndicator={false} />
+
+      <Text style={styles.heading}>Service Providers</Text>
+
+      {
+      /* List of service providers */
     }
       <FlatList data={dummyData} renderItem={renderPlaceItem} keyExtractor={item => item.id} horizontal showsHorizontalScrollIndicator={false} />
     </SafeAreaView>;
@@ -90,21 +106,21 @@ const styles = {
     flex: 1,
     paddingHorizontal: 16,
     paddingTop: 16,
-    backgroundColor: '#fff'
+    backgroundColor: "#fff"
   },
   heading: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 8
   },
   subHeading: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 8
   },
   mapContainer: {
     height: 200,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: "#f2f2f2",
     marginBottom: 16
   },
   placeItemContainer: {
@@ -121,16 +137,16 @@ const styles = {
   },
   placeItemTitle: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 4
   },
   placeItemDescription: {
     fontSize: 14,
-    color: '#888'
+    color: "#888"
   },
   newsContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 16
   },
   newsImage: {
@@ -144,12 +160,12 @@ const styles = {
   },
   newsTitle: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 4
   },
   newsDescription: {
     fontSize: 14,
-    color: '#888'
+    color: "#888"
   }
 };
 export default Screen;
