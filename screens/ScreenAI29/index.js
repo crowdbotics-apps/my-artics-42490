@@ -1,11 +1,13 @@
-import React from 'react';
-import { Text, SafeAreaView, TouchableOpacity } from 'react-native';
+import React from "react";
+import { Text, SafeAreaView, TouchableOpacity } from "react-native";
 
 const Screen = () => {
   return <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Services</Text>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Service requests/Service order history</Text>
+        <Text style={styles.buttonText}>
+          Service requests/Service order history
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Payment history</Text>
@@ -41,28 +43,28 @@ const Screen = () => {
 const styles = {
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f5f5f5'
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f5f5f5"
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 20
   },
   button: {
-    width: '80%',
+    width: "80%",
     height: 50,
-    backgroundColor: '#007AFF',
+    backgroundColor: "#007AFF",
     borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginBottom: 10
   },
   buttonText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 18,
-    fontWeight: 'bold'
+    fontWeight: "bold"
   }
 };
 export default Screen;
